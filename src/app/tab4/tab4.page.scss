@@ -1,0 +1,32 @@
+ion-content ion-toolbar {
+    --background: translucent;
+  }
+  
+  .black-input {
+    background-color: black;
+  }
+  
+  #header-col {
+    background: url("../../assets/heroimage.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50%;
+  }
+  
+  #header-card {
+    height: calc(100vh - 70px);
+  }
+  
+  ion-card-content {
+    color: white;
+    height: 100%;
+  }
+  
+  ion-grid {
+    height: 100%;
+  }
+  
+  ion-row {
+    height: 100%;
+  }
+  

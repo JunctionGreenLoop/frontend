@@ -1,3 +1,51 @@
-<p>
-  tab4.page works!
-</p>
+<ion-content class="ion-padding">
+  <ion-grid>
+    <ion-row>
+      <!-- <ion-col size-md="6" size="6" offset="3" offset-md="3"> -->
+      <ion-col size="12" offset="">
+        <ion-card id="header-card">
+          <ion-card-content class="ion-no-padding ion-no-margin">
+            <h1 style="font-size: 3.5em" class="ion-padding-bottom">
+              Here you can provide the info about
+              <span style="color: var(--ion-color-primary)">raw materials</span>
+              in your product
+            </h1>
+
+            <form #token="ngForm" (ngSubmit)="onClickSubmit(token.value)">
+              <ion-grid class="ion-align-items-center">
+                <ion-row>
+                  <ion-col size="6">
+                    <ion-input
+                      class="black-input"
+                      label="Input"
+                      ngModel
+                      name="token"
+                      labelPlacement="stacked"
+                      [clearInput]="true"
+                      placeholder="Put your token here"
+                    >
+                    </ion-input>
+                  </ion-col>
+                  <ion-col size="3">
+                    <ion-button type="ngSubmit">Check the token</ion-button>
+                  </ion-col>
+                  <ion-col>
+                    <h2 *ngIf="companyNameMessage">
+                      Company:
+                      <span style="color: var(--ion-color-primary)"
+                        >{{companyNameMessage}}</span
+                      >
+                    </h2>
+                    <h2 *ngIf="errorMessage" style="color: red">
+                      {{errorMessage}}
+                    </h2>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </form>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
