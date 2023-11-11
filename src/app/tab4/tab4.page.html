@@ -14,7 +14,7 @@
             <form #token="ngForm" (ngSubmit)="onClickSubmit(token.value)">
               <ion-grid class="ion-align-items-center">
                 <ion-row>
-                  <ion-col size="6">
+                  <ion-col size="7">
                     <ion-input
                       class="black-input"
                       label="Input"
@@ -43,6 +43,18 @@
                 </ion-row>
               </ion-grid>
             </form>
+
+            <ion-card class="ion-padding">
+              <ion-card-content style="text-align: center" class="ion-padding">
+                PROVIDE NAME ANG CO2 EMISSION HERE
+                <ion-grid>
+                  <ion-row>
+                    <ion-col size="6"> DRAGANDDROP FOR MATERIALS CSV </ion-col>
+                    <ion-col> DRAGANDDROP FOR POSSIBLY REUSED CSV (OPTIONAL) </ion-col>
+                  </ion-row>
+                </ion-grid>
+              </ion-card-content>
+            </ion-card>
           </ion-card-content>
         </ion-card>
       </ion-col>
