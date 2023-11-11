@@ -4,6 +4,7 @@ import { Capacitor } from '@capacitor/core';
 import { Directory, Filesystem } from '@capacitor/filesystem';
 import { Preferences } from '@capacitor/preferences';
 import { Platform } from '@ionic/angular';
+import { HttpClient } from  '@angular/common/http';
 
 
 
@@ -14,7 +15,7 @@ export class PhotoService {
   public photos: UserPhoto[] = [];
   private PHOTO_STORAGE: string = 'photos';
 
-  constructor(private platform: Platform) {}
+  constructor(private platform: Platform, private http: HttpClient) {}
 
   public async loadSaved() {
     // Retrieve cached photo array data
@@ -49,11 +50,20 @@ export class PhotoService {
   public async addNewToGallery() {
     // Take a photo
     const capturedPhoto = await Camera.getPhoto({
-      resultType: CameraResultType.Uri, // file-based data; provides best performance
+      resultType: CameraResultType.Base64, // file-based data; provides best performance
       source: CameraSource.Camera, // automatically take a new photo with the camera
       quality: 100, // highest quality (0 to 100)
     });
 
+    let pic = "data:image/png;base64,"+capturedPhoto.base64String;
+
+    this.http.get<any>("https://testgreenlink.ddns.net//detectorApi?image="+pic).subscribe((res) => {
+      console.log(res);
+    }, (err) => {
+      console.error(err);
+    })
+
+    return
     const savedImageFile = await this.savePicture(capturedPhoto);
 
     // Add new photo to Photos array
@@ -65,6 +75,8 @@ export class PhotoService {
       value: JSON.stringify(this.photos),
     });
   }
+
+
 
   // Save picture to file on device
   private async savePicture(photo: Photo) {
