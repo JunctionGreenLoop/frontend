@@ -55,9 +55,12 @@ export class PhotoService {
       quality: 100, // highest quality (0 to 100)
     });
 
-    let pic = "data:image/png;base64,"+capturedPhoto.base64String;
+    // let pic = "data:image/png;base64,"+capturedPhoto.base64String;
+    let pic = capturedPhoto.base64String;
 
-    this.http.get<any>("https://testgreenlink.ddns.net//detectorApi?image="+pic).subscribe((res) => {
+    this.http.post<any>("https://testgreenlink.ddns.net/detectorApi", JSON.stringify({
+      image: pic,
+    })).subscribe((res) => {
       console.log(res);
     }, (err) => {
       console.error(err);
