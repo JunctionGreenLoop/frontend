@@ -29,4 +29,9 @@ ion-content ion-toolbar {
   ion-row {
     height: 100%;
   }
+
+  input[type="file"] {
+
+    display: none;
+}
   

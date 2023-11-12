@@ -5,7 +5,6 @@ import { CommonModule } from "@angular/common";
 import { FormsModule } from "@angular/forms";
 import { Tab4Page } from "./tab4.page";
 import { ExploreContainerComponentModule } from "../explore-container/explore-container.module";
-import { MatListModule } from '@angular/material/list';
 
 @NgModule({
   imports: [

@@ -2,14 +2,16 @@
   <ion-grid>
     <ion-row>
       <!-- <ion-col size-md="6" size="6" offset="3" offset-md="3"> -->
-      <ion-col size="12" offset="">
-        <ion-card id="header-card">
-          <ion-card-content class="ion-no-padding ion-no-margin">
-            <h1 style="font-size: 3.5em" class="ion-padding-bottom">
+      <ion-col size="8" offset="2">
+        <ion-card id="header-card" class="ion-padding">
+          <ion-card-header>
+            <ion-card-title style="font-size: 3.5em; color: white;" class="ion-padding-bottom">
               Here you can provide the info about
               <span style="color: var(--ion-color-primary)">raw materials</span>
               in your product
-            </h1>
+            </ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
 
             <form #token="ngForm" (ngSubmit)="onClickSubmit(token.value)">
               <ion-grid class="ion-align-items-center">
@@ -49,8 +51,13 @@
                 PROVIDE NAME ANG CO2 EMISSION HERE
                 <ion-grid>
                   <ion-row>
-                    <ion-col size="6"> DRAGANDDROP FOR MATERIALS CSV </ion-col>
-                    <ion-col> DRAGANDDROP FOR POSSIBLY REUSED CSV (OPTIONAL) </ion-col>
+                    <ion-button color="light" (click)="onPickCsv()">Upload materials CSV</ion-button>
+                    
+                    <input type="file" accept=".csv" (change)="onCsvChosen($event)" #csvPicker >
+                    <!-- <ion-col size="6"> DRAGANDDROP FOR MATERIALS CSV </ion-col>
+                    <ion-col> DRAGANDDROP FOR POSSIBLY REUSED CSV (OPTIONAL) </ion-col> -->
+                    <!-- <ion-chip color="light" outline="true" *ngIf="matCsvFileInfo">{{ matCsvFileInfo.name }}</ion-chip> -->
+                    <ion-card style="color: white;" *ngIf="matCsvFileInfo"><ion-card-content>{{ matCsvFileInfo.name }}</ion-card-content></ion-card>
                   </ion-row>
                 </ion-grid>
               </ion-card-content>
