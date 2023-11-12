@@ -25,3 +25,22 @@ ion-grid {
 ion-row {
   height: 100%;
 }
+
+.tabcol {
+  text-align: center;
+}
+
+.device-info ion-card-title, .device-info ion-card-subtitle {
+  text-align: center;
+}
+
+.device-info {
+  background-image: url(../../assets/info_bg.png);
+  ackground-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50%;
+}
+
+.material-card {
+  opacity: 0.9;
+}

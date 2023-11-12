@@ -46,7 +46,7 @@
           </ion-card-content>
         </ion-card>
 
-        <ion-card *ngIf="this.phoneObj">
+        <ion-card *ngIf="this.phoneObj" class="device-info">
           <ion-card-header>
             <ion-card-title>
               {{ phoneObj.manufacturer + " " + phoneObj.commercialName }}
@@ -58,15 +58,27 @@
           <ion-card-content>
 
             <ion-grid>
-              <ion-row *ngFor="let e of phoneObj.materials">
-                <ion-col size="6">
-                  {{ e.materialCode }}
-                </ion-col>
-                <ion-col size="6">
-                  {{ e.amount }}g
+              <ion-row>
+                <ion-col size="6" offset="3">
+                  <ion-card *ngFor="let e of phoneObj.materials" class="material-card">
+                    
+                    <ion-grid>
+                      <ion-row>
+                        <ion-col size="6" class="tabcol">
+                          {{ e.materialCode }}
+                        </ion-col>
+                        <ion-col size="6" class="tabcol">
+                          {{ e.amount }}g
+                        </ion-col>
+                      </ion-row>
+                    </ion-grid>
+                  </ion-card>
+
                 </ion-col>
               </ion-row>
+                
             </ion-grid>
+
           </ion-card-content>
         </ion-card>
 
