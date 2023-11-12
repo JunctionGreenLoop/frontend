@@ -14,19 +14,18 @@
         <ion-col size="12" offset="">
         
         <ion-card id="header-card">
-          <ion-card-content class="ion-no-padding ion-no-margin">
-            <ion-grid class="ion-no-padding ion-no-margin">
-              <ion-row class="ion-no-padding ion-no-margin">
-                <ion-col size="6" class="ion-padding" style="margin-top: 60px">
-
+            <ion-card-content class="ion-no-padding ion-no-margin">
+              <ion-grid class="ion-no-padding ion-no-margin">
+                <ion-row class="ion-no-padding ion-no-margin">
+                  <ion-col size="6" class="ion-padding" style="align-items: center; display: flex; padding-left: 20px;" >
                   <div class="container">
                     <div>
-                      <h1 style="font-size: 3.5em;" class="ion-padding-bottom">
+                      <h1 style="font-size: 4.5em; font-family: monospace; font-weight: 600;" class="ion-padding-bottom">
                         Leading the way in <span style="color: var(--ion-color-primary);">Recycling</span> Materials
                       </h1>
-                      <ion-searchbar (search)="searchPhone($event)"></ion-searchbar>
-                      <div style="text-align: center;">
-                        <ion-button (click)="photoService.addNewToGallery()" fill="outline">Search by image</ion-button>
+                      <ion-searchbar style="width: 40%;" (search)="searchPhone($event)" hint="Material"></ion-searchbar>
+                      <div style="text-align: left; margin-left: 5px; font-size: 2rem;">
+                        <ion-button style=" font-size: 1rem; margin-top: 20px;" (click)="photoService.addNewToGallery()" fill="outline" >Search by image</ion-button>
                       </div>
                     </div>
                   </div>
