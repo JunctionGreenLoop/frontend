@@ -43,6 +43,9 @@ export class Tab1Page {
       quality: 100, // highest quality (0 to 100)
     });
 
+    this.phoneObj = null;
+    this.loadingData = true
+
     // let pic = "data:image/png;base64,"+capturedPhoto.base64String;
     let pic = capturedPhoto.base64String;
 
